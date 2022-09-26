@@ -6,3 +6,7 @@
 
 - `npm install --save-dev sequelize-cli@6.2.0`
 - `npx sequelize-cli init` (`npm install --save sequelize`)
+- `node_modules/.bin/sequelize init --force`
+- Dùng npx hay node_modules đều đc
+- `https://sequelize.org/docs/v6/other-topics/migrations/`
+- `npm install --save mysql2@2.2.5`
