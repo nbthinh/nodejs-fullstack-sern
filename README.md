@@ -10,3 +10,6 @@
 - Dùng npx hay node_modules đều đc
 - `https://sequelize.org/docs/v6/other-topics/migrations/`
 - `npm install --save mysql2@2.2.5`
+- `npx sequelize-cli seed:generate --name demo-user`
+- `npx sequelize-cli db:seed:all`
+- https://sequelize.org/docs/v6/getting-started/
