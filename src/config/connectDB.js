@@ -4,8 +4,10 @@ const { Sequelize } = require('sequelize');
 // Option 3: Passing parameters separately (other dialects)
 const sequelize = new Sequelize('hoidanit', 'root', 'root', {
     host: 'localhost',
-    port: 8889,
-    dialect: 'mysql'
+    dialect: 'mysql',
+    dialectOptions: {
+        socketPath: '/Applications/MAMP/tmp/mysql/mysql.sock'
+    }
 });
 
 let connectDB = async () => {
