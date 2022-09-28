@@ -14,3 +14,6 @@
 - `npx sequelize-cli db:seed:all`
 - https://sequelize.org/docs/v6/getting-started/
 - https://stackoverflow.com/questions/57522774/sequelizeconnectionrefusederror-connect-econnrefused-127-0-0-13306
+- `npx sequelize-cli db:migrate`
+- `npx sequelize-cli db:seed:all`
+- Sequelize seeder.

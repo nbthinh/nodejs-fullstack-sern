@@ -7,7 +7,8 @@ const sequelize = new Sequelize('hoidanit', 'root', 'root', {
     dialect: 'mysql',
     dialectOptions: {
         socketPath: '/Applications/MAMP/tmp/mysql/mysql.sock'
-    }
+    },
+    logging: false
 });
 
 let connectDB = async () => {
