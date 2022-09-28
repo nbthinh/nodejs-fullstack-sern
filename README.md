@@ -17,3 +17,6 @@
 - `npx sequelize-cli db:migrate`
 - `npx sequelize-cli db:seed:all`
 - Sequelize seeder.
+- Một số lưu ý:
+    - model, chứa các object để ta tương tác với database, ta sẽ truy xuất database thông qua các class được định nghĩa trong model.
+    - migrations: chứa các ánh xạ đến database, khi thao tác với database sẽ thông qua migration để cập nhật dữ liệu lên database.
