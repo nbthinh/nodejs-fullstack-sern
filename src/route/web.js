@@ -8,6 +8,8 @@ let initWebRoutes = (app) => {
     router.get("/hoidanIT", (req, res) => {
         return res.send("Hello world with hoidanIT");
     })
+    router.get("/crud", homeController.getCRUD);
+    router.post("/post-crud", homeController.postCRUD);
     return app.use("/", router);
 }
 

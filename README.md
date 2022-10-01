@@ -20,3 +20,7 @@
 - Một số lưu ý:
     - model, chứa các object để ta tương tác với database, ta sẽ truy xuất database thông qua các class được định nghĩa trong model.
     - migrations: chứa các ánh xạ đến database, khi thao tác với database sẽ thông qua migration để cập nhật dữ liệu lên database.
+    - seeder: cho phép ta tạo dữ liệu mẫu.
+- bcrypt npm 5.0.1
+- `npm install --save bcrypt@5.0.1`
+- `npm install --save bcryptjs@2.4.3`
