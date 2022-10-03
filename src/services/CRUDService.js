@@ -63,9 +63,52 @@ let getUserInfoById = (userId) => {
         }
     })
 }
+let updateUserData = (data) => {
+    return new Promise(async (resolve, reject) => {
+        console.log("hello World");
+        try {
+            let user = await db.User.findOne({
+                where: {id: data.id}
+            });
+            console.log('user = ', user);
+            console.log('data = ', data);
+            if (user) {
+                user.firstName = data.firstName;
+                user.lastName = data.lastName;
+                user.address = data.address;
+                await user.save();
+                let allUsers = await db.User.findAll();
+                resolve(allUsers);
+
+            }
+            else {
+                resolve();
+            }
+        }catch(e){
+            console.log(e);
+        }
+    })
+}
+let deleteUserById = (userId) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let user = await db.User.findOne({
+                where: {id: userId}
+            })
+            if (user) {
+                await user.destroy();
+            }
+            resolve();
+        }catch(e){
+            reject(e);
+        }
+    })
+}
 
 module.exports = {
     createNewUser: createNewUser,
     getAllUser,
-    getUserInfoById
+    getUserInfoById,
+    updateUserData,
+    deleteUserById
 }
