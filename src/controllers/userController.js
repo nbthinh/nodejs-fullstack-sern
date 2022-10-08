@@ -1,5 +1,5 @@
 import userService from "../services/userService"
-let handleLogin = (req, res) => {
+let handleLogin = async (req, res) => {
     let email = req.body.email;
     let password = req.body.password;
     if (!email || !password) {
@@ -10,8 +10,9 @@ let handleLogin = (req, res) => {
     }
     let userData = await userService.handleUserLogin(email, password);
     return res.status(200).json({
-        message: "Hello world",
-        email: email
+        errCode: userData.errCode,
+        errMessage: userData.errMessage,
+        user: userData.user ? userData.user : {}
     })
 }
 module.exports = {
