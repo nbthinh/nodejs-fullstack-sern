@@ -24,3 +24,4 @@
 - bcrypt npm 5.0.1
 - `npm install --save bcrypt@5.0.1`
 - `npm install --save bcryptjs@2.4.3`
+- `npm install --save cors@2.8.5`
