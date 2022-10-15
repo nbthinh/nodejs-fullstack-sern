@@ -166,10 +166,49 @@ let deleteUser = (userId) => {
         });
     })
 }
+let updateUserData = (data) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            if (!data.id) {
+                resolve({
+                    errCode: 2,
+                    message: "missing require parameter"
+                })
+            }
+            console.log("data = ", data.id);
+            let user = await db.User.findOne({
+                where: {id: data.id},
+                raw: false
+            });
+            console.log("User = ", user);
+            if (user) {
+                user.firstName =  data.firstName;
+                user.lastName =  data.lastName;
+                user.address =  data.address;
+                await user.save();
+                resolve({
+                    errCode: 0,
+                    message: "Update successfully"
+                });
+
+            }
+            else {
+                resolve({
+                    errCode: 1,
+                    message: ""
+                });
+            }
+        }
+        catch(e) {
+            reject(e);
+        }
+    })
+}
 
 module.exports = {
     handleUserLogin,
     getAllUsers,
     createNewUser,
-    deleteUser
+    deleteUser,
+    updateUserData
 }
